@@ -62,7 +62,7 @@ func (u *Upload) Save() {
 	fmt.Println("OK")
 }
 
-func NewUplad() controller.Controller {
+func NewUpload() controller.Controller {
 	return &Upload{
 		Routes: []string{
 			"get;/;Index",
@@ -83,7 +83,7 @@ func main() {
 	app.Router.Options = &router.Options{
 		View: v,
 	}
-	app.Router.Add(NewUplad)
+	app.Router.Add(NewUpload)
 	port := ":8090"
 	app.Log.Info("staring server on port", port)
 	log.Fatal(http.ListenAndServe(port, app))
